@@ -1,0 +1,31 @@
+.footer { width:100%; padding:60px 0; background-color:#f1f1f1; margin:auto; background-image: url("../../../public/texture04.png"); background-size: contain; text-align:center; }
+.footer h2 { font-size:24px; font-weight: 100; letter-spacing: 0.4em; display: inline-block; position:relative; margin-bottom:10px; padding-left:50px; }
+.footer h2::before { content:""; position: absolute; top:55%; transform: translateY(-50%); left:-1px; width:30px; height:30px; background-image: url("../../../public/logo_header.png"); background-repeat: no-repeat; background-size: contain; background-position: center; }
+.footer p.footer_address { font-size:14px; letter-spacing: 1px; line-height: 2.4; }
+.footer div.footer_contact { display: flex; justify-content: center; gap:2em; }
+.footer div.footer_contact p { font-size:24px; line-height: 2; }
+.footer div.footer_contact p > span { font-size:14px; }
+.footer p.footer_time { font-size:14px; line-height: 1.6; }
+.footer > small { font-size:12px; line-height: 3; letter-spacing: 0; }
+.footer ul.footer_sns { display: flex; justify-content: center; gap:12px; margin-top:20px; margin-bottom:30px; display: none; }
+.footer ul.footer_sns li { width:24px; height: auto; }
+div.footer_nav { display: flex; justify-content: center; gap:2em; margin-top:30px; margin-bottom:20px; }
+div.footer_nav div p { font-size:13px; }
+div.footer_nav div p a { color:#333; letter-spacing: 0; transition: all 0.5s ease-in-out; position:relative; }
+div.footer_nav div p a::after { content: ""; position:absolute; width:90%; left:5%; bottom:-5px; height:1px; background-color:#8bcb81; transition: all 0.5s ease-in-out; transform:scale(0,1); transform-origin: top center; }
+div.footer_nav div p a:hover { color:#8bcb81; }
+div.footer_nav div p a:hover::after { transform: scale(1,1); }
+@media screen and (max-width:900px) {
+	.footer { padding:50px 0; }
+	.footer h2 { font-size:18px; padding-left:36px; }
+	.footer h2::before { width:24px; height:24px; }
+	.footer p.footer_address { font-size:12px; }
+	.footer div.footer_contact { flex-direction: column; gap:0; padding-top:10px; padding-bottom:5px; }
+	.footer div.footer_contact p { font-size:18px; line-height: 1.4; }
+	.footer div.footer_contact p > span { font-size:12px; }
+	.footer p.footer_time { font-size:13px; }
+	.footer > small { font-size:9px; letter-spacing: 0; }
+	.footer ul.footer_sns li { width:20px; }
+	div.footer_nav { flex-direction: column; gap:0; }
+	div.footer_nav div p { font-size:12px; line-height: 2.1; }
+}

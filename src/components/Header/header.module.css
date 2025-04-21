@@ -1,0 +1,61 @@
+.header { width:100%; margin:auto; position:fixed; top:0; height:100px; background-color:rgba(255,255,255,0.9); z-index: 10000; }
+@media screen and (max-width:900px) {
+	.header { height:70px; }
+}
+
+.g_nav { width:100%; max-width:1000px; margin:auto; justify-content: space-between; display:flex; height:100px; align-items: center; }
+.g_nav h1 { width:16%; font-size:24px; padding-left:1em; font-weight: normal; letter-spacing: 5px; position:relative; }
+.g_nav h1 > a.headerTitle { font-size:24px; color:var(--foreground); margin-left:20px; }
+.g_nav h1::before { content:""; position: absolute; top:50%; transform: translateY(-43%); left:0; width:30px; height:30px; background-image: url("../../../public/logo_header.png"); background-repeat: no-repeat; background-size: contain; background-position: center; }
+.g_nav nav { display: flex; width:84%; align-items: center; justify-content: flex-end; }
+.g_nav ul { display: flex; align-items: center; justify-content: center; gap:3%; }
+.g_nav div.sp_logo { display: none; }
+.g_nav ul.g_sns { width:15%; margin-left:1%; gap:8%; display: none; }
+.g_nav ul.g_sns li img.auto { width:20px; vertical-align: middle !important; transform: translateY(-10%); }
+
+@media screen and (max-width:900px) {
+  .g_nav { flex-direction: column; position:relative; }
+  .g_nav h1 { width:fit-content; position:fixed; top:22px; left:50%; transform: translateX(-50%); z-index: 1; }
+  .g_nav h1 > a.headerTitle { font-size:20px; margin-left:20px; }
+  .g_nav nav { flex-direction: column; align-items: flex-start; justify-content:flex-start; background-color:rgba(255,255,255,1); width:100%; height:100vh; padding-bottom:calc(100vh); transform: translateX(100%); position:relative; z-index: 11; right:-100%; }
+  .g_nav ul { width:84%; margin:auto; gap:0; }
+  .g_nav div.sp_logo { display: block; width:60%; max-width:200px; margin:70px auto 25px; }
+}
+
+.g_menu { width:90%; }
+.g_menu li.pc_none { display: none; }
+.g_menu li { font-size:15px; }
+.g_menu li a { color:var(--foreground); transition: all 0.5s ease-in-out; position:relative; }
+.g_menu li a::after { content: ""; position:absolute; width:90%; left:5%; bottom:-5px; height:1px; background-color:#8bcb81; transition: all 0.5s ease-in-out; transform:scale(0,1); transform-origin: top center; }
+.g_menu li.current a { color:#8bcb81; }
+.g_menu li a:hover { color:#8bcb81; }
+.g_menu li a:hover::after { transform: scale(1,1); }
+.g_menu li.sp_limited { display: none; }
+
+@media screen and (max-width:900px) {
+	.g_menu { width:100%; flex-direction: column; margin-bottom:30px; text-align:center; }
+	.g_menu li { width:100%; letter-spacing: 1px; border-bottom: solid 1px #ddd; }
+	.g_menu li.pc_none { display: block; }
+	.g_menu li a { width:100%; padding:15px 0; display: block;  }
+	.g_menu li a::after { display: none; }
+	.g_menu li.sp_limited { display: block; }
+	.g_sns { width:60%; gap:8%; }
+	.g_sns li img.auto { width:22px; }
+}
+
+
+
+/* ハンバーガーメニュー */
+.g_button { display: none; }
+@media screen and (max-width:900px) {
+	.g_button { display: block; position:fixed; right:10px; top:13px; background:none; border:none; padding-left:0; padding-right:0; z-index:20000; }
+	.g_button:hover { cursor: pointer; }
+	.navbtn { position: relative;  width: 50px; height:40px; }
+	.navbtn span { display: inline-block; position: absolute; left: 20%; height: 2px; border-radius: 5px; background: #020202; width: 60%; }
+	.navbtn span:nth-of-type(1) { top:10px; }
+	.navbtn span:nth-of-type(2) { top:20px; }
+	.navbtn span:nth-of-type(3) { top:30px; }
+	.navbtn:hover { cursor: pointer; }
+	.navbtn:hover span { background-color:#020202; cursor: pointer; }
+}
+
