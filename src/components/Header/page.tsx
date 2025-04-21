@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../../components/Header/header.module.css";
 import { useState, useEffect } from "react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export function Header() {
 
@@ -50,27 +51,27 @@ export function Header() {
     <>
       <header className={styles.header}>
 	      <div className={styles.g_nav}>
-	        <h1><a href="/" className={styles.headerTitle}>鎧神社</a></h1>
+	        <h1><Link href="/" className={styles.headerTitle}>鎧神社</Link></h1>
           <motion.nav animate="animationValue" initial="initialValue" variants={isMobile ? mobileVariants : pcVariants} transition={{ type: "tween", duration: 0.4, ease: "easeInOut",}}>
             <div className={styles.sp_logo}><Image src="/logo_bk.png" className={styles.imgAuto} width={200} height={42} alt="鎧神社" /></div>
             <ul className={styles.g_menu}>
-            <li><a href="history/">鎧神社ものがたり</a></li>
-            <li><a href="shrine_deity/">鎧神社のかみさま</a></li>
-            <li><a href="prize/">授与品・御朱印</a></li>
-            <li><a href="sanpai/">お祭り・ご祈祷</a></li>
-            <li><a href="map/">境内さんぽ</a></li>
-            <li className={styles.sp_limited}><a href="news/">お知らせ</a></li>
-            <li className={styles.sp_limited}><a href="bridal/">神前結婚式</a></li>
-            <li><a href="access/">アクセス</a></li>
-            <li className={styles.sp_limited}><a href="faq/">よくあるご質問</a></li>
-            <li className={styles.sp_limited}><a href="contact/">お問い合わせ</a></li>
+            <li><Link href="history/">鎧神社ものがたり</Link></li>
+            <li><Link href="shrine_deity/">鎧神社のかみさま</Link></li>
+            <li><Link href="prize/">授与品・御朱印</Link></li>
+            <li><Link href="sanpai/">お祭り・ご祈祷</Link></li>
+            <li><Link href="map/">境内さんぽ</Link></li>
+            <li className={styles.sp_limited}><Link href="news/">お知らせ</Link></li>
+            <li className={styles.sp_limited}><Link href="bridal/">神前結婚式</Link></li>
+            <li><Link href="access/">アクセス</Link></li>
+            <li className={styles.sp_limited}><Link href="faq/">よくあるご質問</Link></li>
+            <li className={styles.sp_limited}><Link href="contact/">お問い合わせ</Link></li>
             </ul>
 
 		        <ul className={styles.g_sns}>
-              <li><a href="/"><Image src="/icon_facebook_bk.png" alt="facebook" className={styles.imgAuto} width={50} height={50} /></a></li>
-              <li><a href="/"><Image src="/icon_twitter_bk.png" alt="twitter" className={styles.imgAuto} width={50} height={50} /></a></li>
-              <li><a href="/"><Image src="/icon_instagram_bk.png" alt="Instagram" className={styles.imgAuto} width={50} height={50} /></a></li>
-              <li><a href="/"><Image src="/icon_youtube_bk.png" alt="YouTube" className={styles.imgAuto} width={50} height={50}/></a></li>
+              <li><Link href="/"><Image src="/icon_facebook_bk.png" alt="facebook" className={styles.imgAuto} width={50} height={50} /></Link></li>
+              <li><Link href="/"><Image src="/icon_twitter_bk.png" alt="twitter" className={styles.imgAuto} width={50} height={50} /></Link></li>
+              <li><Link href="/"><Image src="/icon_instagram_bk.png" alt="Instagram" className={styles.imgAuto} width={50} height={50} /></Link></li>
+              <li><Link href="/"><Image src="/icon_youtube_bk.png" alt="YouTube" className={styles.imgAuto} width={50} height={50}/></Link></li>
             </ul>
           </motion.nav>
         </div>

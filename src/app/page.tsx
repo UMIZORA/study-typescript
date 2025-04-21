@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header/page";
 import { Footer } from "@/components/Footer/page";
 
@@ -56,21 +57,21 @@ export default function Home() {
     
     
         <section className={styles.banner_block}>
-          <div className={`${styles.banner_content} ${styles.sp_line} ${styles.image_01}`}><a href="history/">
+          <div className={`${styles.banner_content} ${styles.sp_line} ${styles.image_01}`}><Link href="history/">
             <div className={styles.banner_title}><p>鎧神社ものがたり</p></div>
             <div className={styles.banner_info}><p>伝説の社の歴史を辿る</p></div>
             <div className={styles.banner_link}><p>詳しく見る ＞</p></div>
-          </a></div>
+          </Link></div>
     
-          <div className={`${styles.banner_content} ${styles.sp_line} ${styles.image_02}`}><a href="shrine_deity/">
+          <div className={`${styles.banner_content} ${styles.sp_line} ${styles.image_02}`}><Link href="shrine_deity/">
             <div className={styles.banner_title}><p>鎧神社のかみさま</p></div>
             <div className={styles.banner_info}><p>４柱の神様を<br className={styles.forsp}/>お祀りしております</p></div>
             <div className={styles.banner_link}><p>詳しく見る ＞</p></div>
-          </a></div>
+          </Link></div>
     
           <div className={styles.banner_flex}>
-            <div><a href="bridal/"><Image src={`${basePath}/banner03.jpg`} width={400} height={192} alt="神前結婚式" /></a></div>
-            <div><a href="contact/"><Image src={`${basePath}/banner04.jpg`} width={400} height={192} alt="お問い合わせ" /></a></div>
+            <div><Link href="bridal/"><Image src={`${basePath}/banner03.jpg`} width={400} height={192} alt="神前結婚式" /></Link></div>
+            <div><Link href="contact/"><Image src={`${basePath}/banner04.jpg`} width={400} height={192} alt="お問い合わせ" /></Link></div>
           </div>
         </section>
         
