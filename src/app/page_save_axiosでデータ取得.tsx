@@ -9,7 +9,10 @@ import styles from "@/app/page.module.css"
 import getConfig from "next/config";
 const {basePath} = getConfig().publicRuntimeConfig;
 
-import NewsContent from "@/components/NewsContent/page";
+
+import PostService from "@/app/service/PostService";
+import PostType from "@/app/types/PostTypes";
+
 
 
 // エンドポイントURL：　https://www.yoroi.umizora.co.jp/wp/graphql　　`${process.env.WORDPRESS_API_URL}`
@@ -29,65 +32,36 @@ async function fetchAPI(query="", { variables }: Record<string, any> = {}){
   })
 
   const json = await res.json();
+  console.log(json);
   if(json.errors){
     console.error(json.errors);
     throw new Error("Failed to fetch API")
   }
-  return json.data.items.edges.map((data:any) =>{
-    return data.node
-  });
+  return json.data
 
 }
 */
 
 
-
-
-
-
-
-
-const Home: NextPage = () => {
-  /*
-  const FetchData = () => {
-    const [data, setData] = useState(undefined);
-
-    useEffect(() => {
-  fetchAPI(`query NewQuery {
-    items {
-      edges {
-        node {
-          queryACF {
-            itemCate
-            itemPrice
-            itemImg {
-              node {
-                filePath
-              }
-            }
-          }
-          title
-        }
-      }
+export async function getStaticProps(){
+  const staticPostList = await PostService.getList();
+  return {
+    props:{
+      staticPostList
     }
-  }`
-    ).then(item => { console.log(item); setData(item) });
-
-  });
+  }
+}
 
 
-  //console.log(wpTxt);
 
+const Home: NextPage<{staticPostList: PostType[]}> = ({ staticPostList }) => {
 
   //PostService.getList().then((data) => console.log(data), (error) => { console.log("エラーです") } )
 
   //const wpTxt = PostService.getList().then((data) => {return data}, (error) => { console.log("エラーです") } )
   //console.log( wpTxt )
-
-
-
 /*
-fetchAPI(
+  fetchAPI(
     `query NewQuery {
   items {
     edges {
@@ -106,14 +80,16 @@ fetchAPI(
     }
   }
 }`
-  ).then((data) => { console.log(data) });
+  ).then((data) => console.log(data));
 */
 
   return (
     <>
         <Header />
 
-        <NewsContent />
+        { staticPostList.map((post) => {
+          return <p>{ post.title }</p>
+        }) }
 
         <section className={styles.main_movie}>
           <div className={styles.movie_block}>
