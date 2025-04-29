@@ -35,6 +35,8 @@ async function fetchAPI(query="", { variables }: Record<string, any> = {}){
 
 const NewsContent: NextPage = () => {
 
+  const imgURL:string = process.env.NEXT_PUBLIC_WPIMGPATH_URL!;
+
   type PostType = {
     node: any
     title: string
@@ -100,15 +102,17 @@ const NewsContent: NextPage = () => {
   console.log(data);
 
   return (
-    
     <>
+      <div className={ styles.newsBlock }>
       { data ? (data.map((post) => { return(
-        <div className={ styles.newsBlock } key={ post.node.title }>
+        <div key={post.node.title} >
           <p>{ post.node.title }</p>
+          <img src={imgURL + post.node.queryACF.itemImg.node.filePath} />
           <p>{ post.node.queryACF.itemPrice }円</p>
         </div>
       )} ) ) : ( <div></div> ) }
 
+      </div>
     </>
   );
 
