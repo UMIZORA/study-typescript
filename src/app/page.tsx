@@ -113,8 +113,6 @@ fetchAPI(
     <>
         <Header />
 
-        <NewsContent />
-
         <section className={styles.main_movie}>
           <div className={styles.movie_block}>
             <video playsInline muted autoPlay loop>
@@ -130,6 +128,8 @@ fetchAPI(
           </div>
         </section>
     
+        <NewsContent />
+
         <section className={styles.copy_block}>
           <div className={styles.copy_content}>
           <h2>ようこそ鎧神社公式サイトへ</h2>
