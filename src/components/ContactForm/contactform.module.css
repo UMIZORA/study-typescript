@@ -1,0 +1,48 @@
+.mail_form { margin-top:40px; margin-bottom:50px; }
+.mail_form ul li { border-top:solid 1px #8bcb81; padding-top:20px; padding-bottom:20px; }
+.mail_form ul li:last-child { border-bottom:solid 1px #8bcb81; }
+.mail_form ul li.form_type01 { margin:auto; text-align:center; }
+.mail_form ul li.form_type01 label { margin:0 14px; }
+.mail_form ul li.form_type01 label:hover { cursor: pointer; }
+.mail_form ul li.form_type01 input[type="radio"] { position: relative; display: inline-block; top:2px; width: 20px; height: 20px; margin-right:8px; margin-left:25px; border: 1px solid #8bcb81; border-radius: 50%; vertical-align: -2px; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+.mail_form ul li.form_type01 input[type="radio"]:hover { cursor: pointer; }
+.mail_form ul li.form_type01 input[type="radio"]:first-child { margin-left:0; }
+.mail_form ul li.form_type01 input[type="radio"]:checked:before { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 15px; height: 15px; border-radius: 50%; background: #8bcb81; content: ''; }
+.mail_form ul li.form_type01 > div.form_type01_title { padding-left:12.3%; width:fit-content; font-size:16px; margin-bottom:15px; text-align:left; position:relative; }
+.mail_form ul li.form_type01 > div.form_type01_title::before { content:""; display: inline-block; width:8px; height:8px; background-color:#8bcb81; position:relative; bottom:2px; left: -10px; }
+.mail_form ul li.form_type02 { display: flex; justify-content: center; align-items: center; gap:5%; }
+.mail_form ul li.form_type02 > div:first-child { width:20%; text-align:right; }
+.mail_form ul li.form_type02 > div:last-child { width:50%; text-align:left; }
+.mail_form ul li.form_type02 > div:last-child input[type='text'] { border:solid 1px #ccc; padding:8px 10px; border-radius: 3px; width:100%; }
+.mail_form ul li.form_type02 > div:last-child textarea { border:solid 1px #ccc; resize: none; padding:10px 10px; border-radius: 3px; width:100%; height:200px; margin-top:4px; }
+.mail_form ul li.form_type02 > div.form_type02_title { margin-bottom:5px; position: relative; text-align:left; }
+.mail_form ul li.form_type02 > div.form_type02_title::before { content:""; display: inline-block; width:8px; height:8px; background-color:#8bcb81; position:relative; bottom:2px; left: -10px; }
+
+
+@media screen and (max-width:900px) {
+    .mail_form ul li.form_type01 { text-align:left; padding-left:0; }
+    .mail_form ul li.form_type01 label { font-size:15px; line-height: 2; }
+    .mail_form ul li.form_type01 input[type="radio"] { margin-left:0; }
+    .mail_form ul li.form_type01 > div.form_type01_title { font-size:15px; padding-left:0; }
+
+    .mail_form ul li.form_type02 { flex-direction: column; }
+    .mail_form ul li.form_type02 > div { text-align:left; }
+    .mail_form ul li.form_type02 > div:first-child { width:100%; text-align:left; padding-bottom:3px; }
+    .mail_form ul li.form_type02 > div:last-child { width:100%; }
+    .mail_form ul li.form_type02 > div:last-child input[type='text'] { font-size:13px; }
+    .mail_form ul li.form_type02 > div:last-child textarea { font-size:13px; }
+    .mail_form ul li.form_type02 > div.form_type02_title { font-size:15px; }
+
+    .mail_form button[type="submit"] { font-size:16px; width:100%; }
+}
+
+
+.mail_form .button_block { margin:auto; text-align:center; }
+.mail_form .button_block button[type="submit"] { display: inline-block; margin:40px 2%; padding:8px; width:38%; text-align:center; background-color: #8bcb81; border:none; color:#fefefe; border-radius: 2px; letter-spacing: 1px; font-size:20px; font-family: YakuHanMP_Noto, 'Utsukushi', "Hiragino Mincho ProN", "Yu Mincho", YuMincho, serif; }
+.mail_form .button_block button[type="submit"]:hover { cursor: pointer; background-color: #6bab61; }
+
+.thanks_txt p { font-size:110%; text-align:center; line-height: 1.6; }
+@media screen and (max-width:900px) {
+    .mail_form .button_block button[type="submit"] { width:90%; margin:30px auto; font-size:15px; }
+    .thanks_txt p { font-size:14px; line-height: 1.6; }
+} 

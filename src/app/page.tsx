@@ -171,8 +171,8 @@ fetchAPI(
           </Link></div>
     
           <div className={styles.banner_flex}>
-            <div><Link href="bridal/"><Image src={`${basePath}/banner03.jpg`} width={400} height={192} alt="神前結婚式" /></Link></div>
-            <div><Link href="contact/"><Image src={`${basePath}/banner04.jpg`} width={400} height={192} alt="お問い合わせ" /></Link></div>
+            <div><Link href="bridal/"><Image src={`${basePath}/home/banner03.jpg`} width={400} height={192} alt="神前結婚式" /></Link></div>
+            <div><Link href="contact/"><Image src={`${basePath}/home/banner04.jpg`} width={400} height={192} alt="お問い合わせ" /></Link></div>
           </div>
         </section>
         

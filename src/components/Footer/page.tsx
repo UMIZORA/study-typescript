@@ -22,9 +22,9 @@ export function Footer() {
         </ul>
 
         <div className={styles.footer_nav}>
-	        <div><p><Link href="privacypolicy/">プライバシーポリシー ＞</Link></p></div>
-	        <div><p><Link href="faq/">よくあるご質問 ＞</Link></p></div>
-	        <div><p><Link href="contact/">お問い合わせ ＞</Link></p></div>
+	        <div><p><Link href="/privacypolicy/">プライバシーポリシー ＞</Link></p></div>
+	        <div><p><Link href="/faq/">よくあるご質問 ＞</Link></p></div>
+	        <div><p><Link href="/contact/">お問い合わせ ＞</Link></p></div>
         </div>
 
         <small>Copyright (C) 2023 YOROI JINJA All Right Reserved</small>

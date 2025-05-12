@@ -55,16 +55,16 @@ export function Header() {
           <motion.nav animate="animationValue" initial="initialValue" variants={isMobile ? mobileVariants : pcVariants} transition={{ type: "tween", duration: 0.4, ease: "easeInOut",}}>
             <div className={styles.sp_logo}><Image src="/logo_bk.png" className={styles.imgAuto} width={200} height={42} alt="鎧神社" /></div>
             <ul className={styles.g_menu}>
-            <li><Link href="history/">鎧神社ものがたり</Link></li>
-            <li><Link href="shrine_deity/">鎧神社のかみさま</Link></li>
-            <li><Link href="prize/">授与品・御朱印</Link></li>
-            <li><Link href="sanpai/">お祭り・ご祈祷</Link></li>
-            <li><Link href="map/">境内さんぽ</Link></li>
-            <li className={styles.sp_limited}><Link href="news/">お知らせ</Link></li>
-            <li className={styles.sp_limited}><Link href="bridal/">神前結婚式</Link></li>
-            <li><Link href="access/">アクセス</Link></li>
-            <li className={styles.sp_limited}><Link href="faq/">よくあるご質問</Link></li>
-            <li className={styles.sp_limited}><Link href="contact/">お問い合わせ</Link></li>
+            <li><Link href="/history/">鎧神社ものがたり</Link></li>
+            <li><Link href="/shrine_deity/">鎧神社のかみさま</Link></li>
+            <li><Link href="/prize/">授与品・御朱印</Link></li>
+            <li><Link href="/sanpai/">お祭り・ご祈祷</Link></li>
+            <li><Link href="/map/">境内さんぽ</Link></li>
+            <li className={styles.sp_limited}><Link href="/news/">お知らせ</Link></li>
+            <li className={styles.sp_limited}><Link href="/bridal/">神前結婚式</Link></li>
+            <li><Link href="/access/">アクセス</Link></li>
+            <li className={styles.sp_limited}><Link href="/faq/">よくあるご質問</Link></li>
+            <li className={styles.sp_limited}><Link href="/contact/">お問い合わせ</Link></li>
             </ul>
 
 		        <ul className={styles.g_sns}>

@@ -1,11 +1,12 @@
 "use client"
 
+import Image from "next/image";
 import { NextPage } from 'next';
 import { useState, useEffect } from 'react';
 
 import styles from "@/components/NewsContent/newscontent.module.css"
 
-async function fetchAPI(query="", { variables }: Record<string, any> = {}){
+async function fetchAPI(query="", { variables }: Record<string, number> = {}){
   const headers = { "Content-Type": "application/json" }
   // エンドポイントURL：　https://www.yoroi.umizora.co.jp/wp/graphql　　`${process.env.NEXT_PUBLIC_WPENDPOINT_URL}`
 
@@ -37,12 +38,27 @@ const NewsContent: NextPage = () => {
 
   const imgURL:string = process.env.NEXT_PUBLIC_WPIMGPATH_URL!;
 
-  type PostType = {
-    node: any
-    title: string
+  type pathType = {
+    filePath: string
+  }
+
+  type imgType = {
+    node: pathType
+  }
+
+  type queryType = {
     itemCate: string
     itemPrice: number
-    filePath: string
+    itemImg:imgType
+  }
+
+ type nodeType = {
+  title: string
+  queryACF: queryType
+ }
+
+  type PostType = {
+    node: nodeType
   }
 
   const [data, setData] = useState<PostType[]>([]);
@@ -104,10 +120,10 @@ const NewsContent: NextPage = () => {
   return (
     <>
       <div className={ styles.newsBlock }>
-      { data ? (data.map((post) => { return(
-        <div key={post.node.title} >
+      { data ? (data.map((post,index) => { return(
+        <div key={index} >
           <p>{ post.node.title }</p>
-          <img src={imgURL + post.node.queryACF.itemImg.node.filePath} />
+          <Image src={imgURL + post.node.queryACF.itemImg.node.filePath} alt="鎧神社" width={300} height={400} />
           <p>{ post.node.queryACF.itemPrice }円</p>
         </div>
       )} ) ) : ( <div></div> ) }

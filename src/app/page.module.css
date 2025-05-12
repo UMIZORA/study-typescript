@@ -22,7 +22,7 @@
 
 .copy_block { padding-top:80px; padding-bottom:80px; background-color:#fefefe; text-align:center; position:relative; }
 .copy_block .copy_content h2 { font-size:24px; font-weight: 100; letter-spacing: 0.5em; margin-bottom:40px; padding-bottom:45px; position:relative; display: inline-block; }
-.copy_block .copy_content h2::after { content: ""; background-image: url("../../public/icon02.png"); position:absolute; bottom:0; left:20%; width:60%; height:20px; background-position:center; background-repeat: no-repeat; background-size: contain; }
+.copy_block .copy_content h2::after { content: ""; background-image: url("../../public/home/icon02.png"); position:absolute; bottom:0; left:20%; width:60%; height:20px; background-position:center; background-repeat: no-repeat; background-size: contain; }
 .copy_block .copy_content p { letter-spacing: 2px; line-height: 2; padding-bottom:25px; }
 .copy_block .copy_time { width:100%; max-width: 660px; background-color:#faf9f4; padding:30px; margin:auto; margin-top:50px; margin-bottom:30px; }
 .copy_block .copy_time > p { display: inline-block; line-height: 1.8; padding:50px; width:100%; border:solid 1px #e4dfcc; font-size:20px; letter-spacing: 0.2em; box-sizing: border-box; }
@@ -41,7 +41,7 @@
 .copy_block .photo_01::before { content: "Yoroi Jinja"; position:absolute; bottom:4.4%; left:5%; color:rgba(255,255,255,0.5); font-size:18px; letter-spacing: 0.5em; font-family: 'Inter', sans-serif; z-index: 10; }
 .copy_block .photo_01::after { content: ""; position:absolute; width:90%; height:90%; border:solid 1px rgba(255,255,255,0.5); top:5%; left:5%; }
 .copy_block .photo_01 > div { width:100%; height:100%; clip-path: inset(0); }
-.copy_block .photo_01 > div::after { content:""; width:100%; height:100%; background-image: url("../../public/photo01.jpg"); position: fixed; top:0; left:0; background-position: center; background-size: cover; background-repeat: no-repeat; z-index: 10; }
+.copy_block .photo_01 > div::after { content:""; width:100%; height:100%; background-image: url("../../public/home/photo01.jpg"); position: fixed; top:0; left:0; background-position: center; background-size: cover; background-repeat: no-repeat; z-index: 10; }
 @media screen and (max-width:900px) {
     .copy_block .photo_01 { height:260px; margin-top:60px; }
     .copy_block .photo_01::before { font-size:14px; letter-spacing: 0.3em; }
@@ -56,8 +56,8 @@
 .banner_block > div.banner_content::after { bottom:5%; right:-2.5%; background-color: #8bcb81; position:absolute; content: ""; width:0; height:1px; transition: all 0.3s linear; transition-delay: 0.3s; }
 .banner_block > div.banner_content:hover::before { width:105%; transition-delay: 0.3s; }
 .banner_block > div.banner_content:hover::after { width:105%; transition-delay: 0.3s; }
-.banner_block > div.banner_content.image_01 { background-image: url("../../public/banner01.jpg"); background-position: top left; background-repeat: no-repeat; background-origin: center center; background-size: contain; transition: all 0.3s linear; }
-.banner_block > div.banner_content.image_02 { background-image: url("../../public/banner02.jpg"); background-position: top left; background-repeat: no-repeat; background-origin: center center; background-size: contain; transition: all 0.3s linear; }
+.banner_block > div.banner_content.image_01 { background-image: url("../../public/home/banner01.jpg"); background-position: top left; background-repeat: no-repeat; background-origin: center center; background-size: contain; transition: all 0.3s linear; }
+.banner_block > div.banner_content.image_02 { background-image: url("../../public/home/banner02.jpg"); background-position: top left; background-repeat: no-repeat; background-origin: center center; background-size: contain; transition: all 0.3s linear; }
 .banner_block > div.banner_content.image_01:hover { filter: brightness(1.2); transform: scale(1.005); }
 .banner_block > div.banner_content.image_02:hover { filter: brightness(1.2); transform: scale(1.005); }
 .banner_block > div.banner_content > a { display: block; width:100%; height:100%; position:relative; color:#fefefe; }
@@ -67,7 +67,7 @@
 .banner_block > div.banner_content > a:hover::after { height:90%; }
 .banner_block > div.banner_content > a > div.banner_title { position:absolute; top:51%; left:50%; width:100%; transform: translate(-50%,-50%); text-align:center; margin:auto; }
 .banner_block > div.banner_content > a > div.banner_title p { font-size:24px; font-weight: 100; letter-spacing: 0.1em; -ms-writing-mode: tb-rl; writing-mode: vertical-rl; margin:auto; }
-.banner_block > div.banner_content > a > div.banner_title p::before { content:""; display: inline; position:absolute; top:50%; left:50%; transform: translate(-50%,-50%); width:200px; height:172px; background: url("../../public/icon01.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+.banner_block > div.banner_content > a > div.banner_title p::before { content:""; display: inline; position:absolute; top:50%; left:50%; transform: translate(-50%,-50%); width:200px; height:172px; background: url("../../public/home/icon01.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
 .banner_block > div.banner_content > a:hover > div.banner_title p::after { transform-origin: center; transform: translate(-50%,-50%) scale(1.2);  }
 .banner_block > div.banner_content > a > div.banner_info { position:absolute; top:50%; left:15%; transform: translate(-50%,-50%); }
 .banner_block > div.banner_content > a > div.banner_info p { font-size:15px; font-weight: 100; letter-spacing: 0.01em; -ms-writing-mode: tb-rl; writing-mode: vertical-rl; margin:auto; }
