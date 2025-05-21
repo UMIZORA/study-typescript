@@ -5,7 +5,7 @@ import { NextPage } from 'next';
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 
-import styles from "@/components/NewsContent/newscontent.module.css"
+import styles from "@/components/NewsContentAll/newscontentall.module.css";
 import Link from "next/link";
 
 async function fetchAPI(query = "", { variables }: Record<string, number> = {}) {
@@ -33,7 +33,7 @@ async function fetchAPI(query = "", { variables }: Record<string, number> = {}) 
 
 
 
-const NewsContent: NextPage = () => {
+const NewsContentAll: NextPage = () => {
   const imgURL: string = process.env.NEXT_PUBLIC_WPIMGPATH_URL!;
 
   type pathType = {
@@ -65,7 +65,7 @@ const NewsContent: NextPage = () => {
   useEffect(() => {
     const getTodos = async () => {
       const response = await fetchAPI(`query NewQuery {
-  newsss(first: 4) {
+  newsss(first: 1000) {
     edges {
       node {
         content
@@ -95,7 +95,6 @@ const NewsContent: NextPage = () => {
   return (
     <>
       <div className={styles.newsBlock}>
-        <h2>お知らせ</h2>
 
         <div className={styles.news_flex}>
           {data ? (data.map((post, index) => {
@@ -112,8 +111,6 @@ const NewsContent: NextPage = () => {
           })) : (<div></div>)}
         </div>
 
-        <div className={styles.news_link}><Link href="news/">もっと見る</Link></div>
-
       </div>
     </>
   );
@@ -122,7 +119,7 @@ const NewsContent: NextPage = () => {
 
 //<div key={JSON.stringify(data)}>{JSON.stringify(data)}</div>
 
-export default NewsContent;
+export default NewsContentAll;
 
 
 

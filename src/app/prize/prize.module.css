@@ -2,3 +2,60 @@
 @media screen and (max-width:900px) {
     .forsp { display: block; }
 }
+
+.main_block { padding-top:100px; background-color:#fefefe; }
+
+.main_block_bg { position:relative; margin-top:200px; }
+.main_block_bg::before { content: ""; display: block; position:fixed; top:-24%; left:0; z-index: 1; width:100%; height:80%; background-repeat: repeat-y; background-image:url('../../../public/prize/main_prize.jpg'); background-position: top center; background-size: cover; }
+
+.main_block_bg > h2 { font-size:24px; letter-spacing: 0.2em; font-weight: normal; position:absolute; top:100px; left:50%; transform: translateX(-50%); position:absolute; z-index: 11; }
+.main_block_bg > h2::before { content: ""; position:absolute; top:-50px; left:50%; transform: translateX(-50%); width:36px; height:36px; background-image: url("../../../public/logo_green.png"); background-size: contain; background-repeat: no-repeat; background-position: center; }
+.main_block_bg > p { position:absolute; top:145px; left:50%; transform: translateX(-50%); z-index: 11; }
+
+@media screen and (max-width:900px) {
+    .main_block { padding-top:70px; background-color:#fefefe; }
+    .main_block::before { height:70px; }
+    .main_block_bg::before { top:0; height:30%; background-image:url('../../../public/prize/main_prize.jpg'); background-repeat: no-repeat; background-position:top center; background-size: cover; }
+    .main_block_bg > h2 { font-size:16px; top:76px; }
+    .main_block_bg > h2::before{ top:-40px; width:32px; height:32px; }
+    .main_block_bg > p { font-size:13px; top:116px; width:84%; }
+}
+
+.white_bg { background-color:#fefefe; position:relative; z-index: 10; }
+
+
+.content_block { padding:220px 0 100px; width:720px; margin:auto; margin-top:200px; text-align: left; }
+.content_block > h3 { padding-top:6px; padding-bottom:6px; padding-left:40px; margin-bottom:40px; text-align:left; font-size:22px; font-weight: normal; letter-spacing: 0.1em; border-top:solid 1px #8bcb81; border-bottom:solid 1px #8bcb81; position:relative; }
+.content_block > h3::after { content: ""; position:absolute; width:200px; height:100%; background-image: url("../../../public/title_icon.png"); background-size: contain; background-size: contain; background-repeat: no-repeat; top:0; right:0; }
+.content_block > h3 > span { font-size:13px; color:#555; letter-spacing: 0; padding-left:20px; vertical-align: middle; }
+@media screen and (max-width:900px) {
+    .content_block { padding:180px 0 40px; width:84%; margin-top:160px; }
+    .content_block > h3 { font-size:16px; padding-left:10px; margin-bottom:30px; line-height: 1.4; padding-top:10px; padding-bottom:10px; }
+    .content_block > h3.title_wide { z-index: 10; }
+    .content_block > h3::after { right:10px; bottom:0; width:120px; height:100%; background-image: url("../../../public/title_icon_sp.png"); background-size: cover; background-repeat: no-repeat; position: absolute; z-index: 1; }
+    .content_block > h3.title_wide::after { width:150px; z-index: 1; }
+    .content_block > h3 > span { font-size:11px; display: block; position:relative; padding-left:0; color:#555; z-index: 10; }
+}
+
+.content_block div.txt_block { width:640px; margin:auto; }
+.content_block div.txt_block p { font-size:15px; line-height: 1.5; }
+@media screen and (max-width:900px) {
+    .content_block div.txt_block { width:100%; }
+    .content_block div.txt_block p { font-size:13px; }
+}
+
+
+.content_block div.card_flex { width:640px; margin:40px auto 80px; display: flex; justify-content: flex-start; gap:3.5%; flex-wrap: wrap; }
+.content_block div.card_flex > div { width:31%; margin-bottom:40px; text-align:center; }
+.content_block div.card_flex > div img { width:100%; border-radius: 3px; }
+.content_block div.card_flex > div h4 { font-size:16px; font-weight: normal; letter-spacing: 1px; }
+.content_block div.card_flex > div p { font-size:14px; color:#555; letter-spacing: 1px; line-height: 1.5; }
+@media screen and (max-width:900px) {
+    .content_block div.card_flex { width:100%; gap:6%; margin:30px auto 60px; }
+    .content_block div.card_flex > div { width:47%; max-width:300px; }
+    .content_block div.card_flex > div h4 { font-size:15px; }
+    .content_block div.card_flex > div p { font-size:13px; }
+}
+
+
+

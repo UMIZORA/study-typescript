@@ -8,7 +8,6 @@ import { send } from "emailjs-com";
 import { emailjsConfig } from "./Emailjs"
 
 
-
 export const ContactForm = () => {
 
     const [selectedOption, setSelectedOption] = useState("");
@@ -22,23 +21,30 @@ export const ContactForm = () => {
     const [email, setEmail] = useState<string>('');
     const [message, setMessage] = useState<string>('');
 
-    const sendMail = () => {
+    //送信できたらフォームを見えなくする
+    const [active, setActive] = useState(true);
+
+  const sendMail = () => {
+
   if (
     emailjsConfig.serviceId !== undefined &&
     emailjsConfig.templateId !== undefined
-  ) {
+  )
+  {
     const template_param = {
+      selectOp: selectedOption,
       to_name: name,
       from_email: email,
       message: message,
-    }
+  }
 
     send(
       emailjsConfig.serviceId,
       emailjsConfig.templateId,
       template_param
     ).then(() => {
-      window.alert('お問い合わせを送信致しました。')
+      setActive(!active)
+      setSelectedOption('')
       setName('')
       setEmail('')
       setMessage('')
@@ -48,33 +54,31 @@ export const ContactForm = () => {
 
 
   const onSubmit = (event: ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault()
+    event.preventDefault();
     sendMail()
   }
 
-
-  
 
 
   return (
     <>
 
-      <form onSubmit={onSubmit}>
+      <form className={active ? styles.formAll : styles.formAllNone} onSubmit={onSubmit}>
         <div className={styles.mail_form}>
           <ul>
             <li className={styles.form_type01}>
               <div className={styles.form_type01_title}>ご用件</div>
               <div>
 
-                <label htmlFor="option01"><input type="radio" id="option01" value="option1" checked={selectedOption === "option1"} onChange={handleOptionChange} />神社について</label>
-                <label htmlFor="option02"><input type="radio" id="option02" value="option2" checked={selectedOption === "option2"} onChange={handleOptionChange} />ご祈祷について</label>
-                <label htmlFor="option03"><input type="radio" id="option03" value="option3" checked={selectedOption === "option3"} onChange={handleOptionChange} />その他のお問い合わせ</label>
+                <label htmlFor="option01"><input type="radio" id="option01" value="神社について" checked={selectedOption === "神社について"} onChange={handleOptionChange} />神社について</label>
+                <label htmlFor="option02"><input type="radio" id="option02" value="ご祈祷について" checked={selectedOption === "ご祈祷について"} onChange={handleOptionChange} />ご祈祷について</label>
+                <label htmlFor="option03"><input type="radio" id="option03" value="その他のお問い合わせ" checked={selectedOption === "その他のお問い合わせ"} onChange={handleOptionChange} />その他のお問い合わせ</label>
               </div>
 
             </li>
             <li className={styles.form_type02}>
               <div className={styles.form_type02_title}>お名前</div>
-              <div><input type="text" id="name" name="name" placeholder="山田 二郎" value={name} onChange={(e) => setName(e.target.value)} required /></div>
+              <div><input type="text" id="name" name="name" placeholder="神社 太郎" value={name} onChange={(e) => setName(e.target.value)} required /></div>
             </li>
             <li className={styles.form_type02}>
               <div className={styles.form_type02_title}>メールアドレス</div>
@@ -89,6 +93,9 @@ export const ContactForm = () => {
         </div>
       </form>
 
+
+      <div className={active ? styles.displayNone : styles.thanks_txt} ><p>お問い合わせありがとうございました。<br /> ご返信まで今しばらくお待ち下さい。</p></div>
+
     </>
 
   );
@@ -96,5 +103,5 @@ export const ContactForm = () => {
 
 
 
-//<div className={styles.thanks_txt}><p>お問い合わせありがとうございました。<br /> ご返信まで今しばらくお待ち下さい。</p></div>
+//
 //<div className={styles.thanks_txt}><p>メール送信に失敗しました。<br />お手数ですが再度お問い合わせ下さい。</p></div>

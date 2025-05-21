@@ -127,8 +127,7 @@ fetchAPI(
             </div>
           </div>
         </section>
-    
-        <NewsContent />
+
 
         <section className={styles.copy_block}>
           <div className={styles.copy_content}>
@@ -155,6 +154,8 @@ fetchAPI(
           <div className={styles.photo_01}><div>{/*<Image className={styles.img_parallax} src={`${basePath}/photo01.jpg`} layout="fill" objectFit="cover" alt="境内" />*/}</div></div>
         </section>
     
+
+        <NewsContent />
     
     
         <section className={styles.banner_block}>
